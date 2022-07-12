@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import SpecialComponent from "./SpecialComponent";
+import style from './style.css'
 
-function App() {
+const App = () => {
+  const [counter, setCounter] = useState(0);
+  const [showComponent, setShowComponent] = useState(false);
+  
+  //componentWillMount 
+
+  useEffect (() =>
+  {
+    document.title = "React Hooks | UseEffect" //o hook está pegando o titulo da página e o alterando
+  }, []);
+
+  //componentWillUpdate
+
+  useEffect(() => {
+    alert(`Valor do counter ${counter}`)
+  }, [counter]); 
+
+  //useEffect agindo sobre o useState, quando o valor do useState for alterado, o useEffect tem um efeito colateral de mostrar uma mensagem com o valor atual
+
+  const increaseCounter = () => {
+    setCounter(counter + 1);
+  }
+
+  const handleComponentVisibility = () => {
+    setShowComponent(!showComponent); //oposto do valor padrão do showComponent, falso para true, true para falso
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1> Pronto para codar </h1>
+      <h2> {counter} </h2>
+      <button onClick={increaseCounter}> Aumenta o counter </button>
+      &nbsp;
+      <button onClick={handleComponentVisibility}> {showComponent ? "Esconder o componente" : "Exibir o componente especial"} </button>
+      <br />
+      {showComponent && <SpecialComponent />} 
+      {/* && - operação ternária apenas com o if, ou seja, se for verdadeiro exibir o componente */}
+    </>
   );
 }
 
