@@ -1,5 +1,19 @@
-<h1> useEffect </h1>
+# useEffect 
 
-<h3> Esse projeto foi feito para fins de estudo do Hook UseEffect da biblioteca ReactJs, assim como do Hook UseState. </h3>
+## Sobre
 
-https://user-images.githubusercontent.com/80493617/212066649-9c4c3167-40a5-4096-93ad-15b75655e822.mp4
+### Esse projeto foi feito para fins de estudo do Hook UseEffect da biblioteca ReactJs, assim como do Hook UseState. 
+
+## Como usar
+
+### 1. Clonar o projeto em sua máquina:
+
+```
+git clone https://github.com/isamsm/useEffect
+```
+
+### 2. Acessar o ambiente local:
+
+localhost:3000 no seu navegador.
+
+E pronto, dessa forma você já terá o projeto rodando em sua máquina!
